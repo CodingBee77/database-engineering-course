@@ -10,18 +10,28 @@ skilled backend engineer.
 It can bring your database skills to the next level and let you design reliable and error-proof systems.
 
 Set up details:
-- database used: PostgreSQL run from the docker container
+- database used: PostgreSQL 14.1 run from the docker container
 
 ### Prerequisites:
 - installed docker
 
-To run postgres database in a container, use below command:
+To run postgres database with docker-compose file:
 ```
-docker run --name pgmain -d -e POSTGRES_PASSWORD=postgres postgres
+docker-compose -f docker-compose.yml up
 ```
 
-To enter the container:
+To enter the database inside the container:
+
 ```
-docker exec -it pgmain bash
+docker exec -it {container name} psql -U {username} -d {table name}
 ```
+
+
+### Project description:
+
+2 javascript scripts to automate partitioning for database with 1B rows.
+
+"create_partitions.mjs" - create main customers table and partitions
+"populate_customers.mjs" - populate data into previously defined partitions
+
 
