@@ -10,4 +10,12 @@ skilled backend engineer.
 It can bring your database skills to the next level and let you design reliable and error-proof systems.
 
 Set up details:
-- database used: PostgresSQL run from the docker container
+- database used: PostgreSQL run from the docker container
+
+```
+docker run --name pgmain -d -e POSTGRES_PASSWORD=postgres postgres
+```
+
+```
+docker exec -it pgmain bash
+```
